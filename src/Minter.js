@@ -18,7 +18,7 @@ const Minter = ({ accounts, setAccounts}) => {
                 signer
             );
             try {
-                const response = await contract.publicPurchase(BigNumber.from(mintAmount), {
+                const response = await contract.publicPurchase(BigNumber.from(accounts, mintAmount), {
                     value: ethers.utils.parseEther((0.03 * mintAmount).toString()),
                 });
                 console.log('response: ', response);
