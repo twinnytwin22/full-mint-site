@@ -9,7 +9,7 @@ const Minter = ({ accounts, setAccounts}) => {
     const isConnected = Boolean(accounts[0]);
 
     async function handleMint() {
-        if(window.etherem) {
+        if(window.ethereum) {
             const provider = new ethers.providers.Web3Provider(window.ethereum)
             const signer = provider.getSigner();
             const contract = new ethers.Contract(
